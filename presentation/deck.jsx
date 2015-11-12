@@ -1,6 +1,9 @@
 /*eslint-disable no-multiple-empty-lines*/
 import React from "react/addons";
 
+// victory components
+import {VictoryPie} from "victory-pie";
+
 // Slide abstractions
 // ------------------
 // Appear, BlockQuote, Cite, CodePane, Deck, Fill,
@@ -16,6 +19,7 @@ import preloader from "spectacle/src/utils/preloader";
 const images = {
   polygons: require("../assets/img/bg/formidable/formidangles-dark.svg"),
   polygonsGray: require("../assets/img/bg/formidable/formidangles-gray.svg"),
+  estonia: require("../assets/img/bg/slides/estonia.jpg")
 };
 
 // Preload all images
@@ -219,6 +223,43 @@ export default class extends React.Component {
             A <em>collection of composable react components</em> for building interactive data visualizations
           </LonelyHeading>
         </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={3}>
+            Motivations
+          </Heading>
+          <List>
+            <ListItem><Appear fid="1">We love data visualization</Appear></ListItem>
+            <ListItem><Appear fid="2">We love <em>React</em></Appear></ListItem>
+            <ListItem><Appear fid="3">We love great DevUX</Appear></ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={2} textColor={"red"}>
+            Data Visualization
+          </Heading>
+          <Heading size={4}>
+            Bridge the divide between beginners and experts
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={2} textColor={"red"}>
+            React
+          </Heading>
+          <Heading size={4} bold >
+            component lifecycle +
+          </Heading>
+          <Heading size={4}>
+            data binding
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={2} textColor={"red"}>
+            DevUX
+          </Heading>
+          <Heading size={4} bold >
+            Give the community a better medium for rapid prototyping
+          </Heading>
+        </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <List>
             <ListItem><Appear fid="1">React DOM model</Appear></ListItem>
@@ -226,7 +267,79 @@ export default class extends React.Component {
             <ListItem><Appear fid="3">D3 layout math</Appear></ListItem>
           </List>
         </Slide>
-
+        <Slide>
+          <LonelyHeading size={4}>
+            D3 pioneered interactive data visualization on the web
+          </LonelyHeading>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <List>
+            <ListItem><Appear fid="1">extensive api</Appear></ListItem>
+            <ListItem><Appear fid="1">extensive ecosystem of gists to start from / learn from</Appear></ListItem>
+            <ListItem><Appear fid="1">DOM model inspired React authors</Appear></ListItem>
+            <ListItem><Appear fid="1">encouraged functional paradigm</Appear></ListItem>
+            <ListItem><Appear fid="1">extensive geo functionality*</Appear></ListItem>
+            <ListItem><Appear fid="1">well conceived and maintained by Bostock</Appear></ListItem>
+            <ListItem><Appear fid="1">brought academic layout algorithms onto client</Appear></ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            <i className="fa fa-times"></i> APIs eliminated
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              .selectAll()
+              .select()
+              .data()
+              .enter()
+              .exit()
+              .update()
+              .transition()
+              .axis()
+              .brush()
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}
+          />
+        </Slide>
+        {/* ---------------------------------------------------------------
+          * Bridging the gap between beginners and experts
+          * ---------------------------------------------------------------
+          */}
+        <Slide>
+          <Heading size={3}>
+            <i className="fa fa-flash"></i> Seconds to Drop In
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              <VictoryPie/>
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}
+          />
+        </Slide>
+        <Slide>
+          <VictoryPie/>
+        </Slide>
+        <Slide bgImage={images.estonia} bgDarken={0.35}>
+          <Heading bold fit caps textColor="lightestGray">
+            Data visualization
+          </Heading>
+          <Heading bold fit caps textColor="primary">
+            Is both technical
+          </Heading>
+          <Heading bold fit caps textColor="lightestGray">
+            And aesthetic
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading bold fit caps>
+            The medium matters
+          </Heading>
+        </Slide>
       </CustomDeck>
     );
   }
