@@ -304,10 +304,32 @@ export default class extends React.Component {
             style={{fontSize: "2em"}}
           />
         </Slide>
+        <Slide bgImage={"http://1.bp.blogspot.com/-AE5n71l7fYo/U_kgHH5-TkI/AAAAAAAA-hg/3a6FEXsJsRA/s1600/Breitling%2BNavitimer%2B01%2BLimited%2B3.jpg"} bgDarken={0.55}>
+          <Heading bold fit caps textColor="white">
+            Data visualization
+          </Heading>
+          <Heading bold fit caps textColor="white">
+            Is both technical
+          </Heading>
+          <Heading bold fit caps textColor="white">
+            And aesthetic
+          </Heading>
+        </Slide>
+        <Slide bgImage={"http://the-diamond-studio.com/wp-content/uploads/2014/01/IMG_2981.jpg"} bgDarken={0.55}>
+          <Heading bold fit textColor={"lightestGray"} >
+            The medium matters
+          </Heading>
+        </Slide>
         {/* ---------------------------------------------------------------
-          * Bridging the gap between beginners and experts
+          * Part 1: Bridging the gap between beginners and experts
+          * what it means for you - drop in and fully customize
           * ---------------------------------------------------------------
           */}
+        <Slide bgImage={images.polygons}>
+          <LonelyHeading size={2} textColor="lightestGray">
+            Bridging the gap between beginners and experts
+          </LonelyHeading>
+        </Slide>
         <Slide>
           <Heading size={3}>
             <i className="fa fa-flash"></i> Seconds to Drop In
@@ -324,20 +346,250 @@ export default class extends React.Component {
         <Slide>
           <VictoryPie/>
         </Slide>
-        <Slide bgImage={images.estonia} bgDarken={0.35}>
-          <Heading bold fit caps textColor="lightestGray">
-            Data visualization
+        <Slide>
+          <Heading size={3}>
+            Now with data
           </Heading>
-          <Heading bold fit caps textColor="primary">
-            Is both technical
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              <VictoryPie data={[
+                { x: "Cats", y: 400 },
+                { x: "Dogs", y: 350 },
+                { x: "Frogs", y: 25 },
+                { x: "Turtles", y: 55 },
+                { x: "Chimps", y: 5 }
+                ]}/>
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}
+          />
+        </Slide>
+        <Slide>
+          <VictoryPie data={[
+              { x: "Cats", y: 400 },
+              { x: "Dogs", y: 350 },
+              { x: "Frogs", y: 25 },
+              { x: "Turtles", y: 55 },
+              { x: "Chimps", y: 5 }
+            ]}/>
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            Now with innerRadius
           </Heading>
-          <Heading bold fit caps textColor="lightestGray">
-            And aesthetic
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              <VictoryPie
+                innerRadius={140}
+                data={[
+                  { x: "Cats", y: 400 },
+                  { x: "Dogs", y: 350 },
+                  { x: "Frogs", y: 25 },
+                  { x: "Turtles", y: 55 },
+                  { x: "Chimps", y: 5 }
+                ]}/>
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            Now with innerRadius
+          </Heading>
+          <VictoryPie
+            innerRadius={140}
+            data={[
+              { x: "Cats", y: 400 },
+              { x: "Dogs", y: 350 },
+              { x: "Frogs", y: 25 },
+              { x: "Turtles", y: 55 },
+              { x: "Chimps", y: 5 }
+            ]}/>
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            Stroke & Opacity
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              <VictoryPie
+                innerRadius={140}
+                style={{
+                  data: {
+                    stroke: "transparent",
+                    opacity: 0.3
+                  }
+                }}
+                data={[
+                  { x: "Cats", y: 400 },
+                  { x: "Dogs", y: 350 },
+                  { x: "Frogs", y: 25 },
+                  { x: "Turtles", y: 55 },
+                  { x: "Chimps", y: 5 }
+                ]}/>
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            Stroke & Opacity
+          </Heading>
+          <VictoryPie
+            innerRadius={140}
+            style={{
+              data: {
+                stroke: "transparent",
+                opacity: 0.3
+              }
+            }}
+            data={[
+              { x: "Cats", y: 400 },
+              { x: "Dogs", y: 350 },
+              { x: "Frogs", y: 25 },
+              { x: "Turtles", y: 55 },
+              { x: "Chimps", y: 5 }
+            ]}/>
+        </Slide>
+
+
+        {/* ---------------------------------------------------------------
+          * Part 2: How is it that react makes this work?
+          * ---------------------------------------------------------------
+          */}
+        <Slide>
+          <Heading size={3}>
+            Markup in D3
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              var node = svg.selectAll(".node")
+                .data(graph.nodes)
+                .enter().append("circle")
+                .attr("class", "node")
+                .attr("r", 5)
+                .style("fill", function (d) {
+                  return color(d.group);
+                })
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            Markup in Victory
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              <g>
+                <circle
+                  r={5}
+                  fill={datum.group)}
+                  style={{
+                    fill: datum.value > 5 ? "red" : "blue"
+                  }}/>
+                <text> {datum.label} </text>
+              </g>
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            Data binding in D3
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              .data(data)
+              .enter()
+              .append("g")
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            Data binding in Victory
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              let nodesSVG = arrayOfNodes.map((node)=>{
+
+              })
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}
+          />
+        </Slide>
+        <Slide>
+          <Heading>
+            {"github.com/"}
+          </Heading>
+          <Heading>
+            {"FormidableLabs/"}
+          </Heading>
+          <Heading>
+            {"victory-examples"}
           </Heading>
         </Slide>
         <Slide>
-          <Heading bold fit caps>
-            The medium matters
+          <Heading bold size={2} >
+            Components are composable
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading bold fit textColor={"red"}>
+            Radium
+          </Heading>
+          <Heading bold fit >
+            Styles become data
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            Viz State in D3
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              // Toggle children on click.
+              function click(d) {
+                if (d.children) {
+                  d._children = d.children;
+                  d.children = null;
+                } else {
+                  d.children = d._children;
+                  d._children = null;
+                }
+                update(d);
+              }
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}
+          />
+        </Slide>
+
+
+
+
+        <Slide>
+          <Heading bold fit textColor={"red"}>
+            Ecology.js
+          </Heading>
+          <Heading bold fit style={{marginTop: 40}}>
+            Interactive documentation
           </Heading>
         </Slide>
       </CustomDeck>
