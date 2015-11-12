@@ -16,7 +16,6 @@ import preloader from "spectacle/src/utils/preloader";
 const images = {
   polygons: require("../assets/img/bg/formidable/formidangles-dark.svg"),
   polygonsGray: require("../assets/img/bg/formidable/formidangles-gray.svg"),
-  logoFormidable: require("../assets/img/logo/formidable.svg")
 };
 
 // Preload all images
