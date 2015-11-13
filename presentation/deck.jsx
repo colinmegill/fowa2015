@@ -434,6 +434,7 @@ export default class extends React.Component {
             <ListItem><Appear fid="1">projects.formidablelabs.com/victory-pie/</Appear></ListItem>
             <ListItem><Appear fid="1">projects.formidablelabs.com/victory-scatter/</Appear></ListItem>
             <ListItem><Appear fid="1">projects.formidablelabs.com/victory-chart/</Appear></ListItem>
+            <ListItem><Appear fid="1">projects.formidablelabs.com/victory-line/</Appear></ListItem>
           </List>
         </Slide>
 
