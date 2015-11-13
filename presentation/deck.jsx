@@ -201,7 +201,7 @@ export default class extends React.Component {
             <Text style={{display: "inline-block", fontSize: "2.5em"}}>
               <Link href="http://surge2015.formidablelabs.com"
                     textColor="lighterGray">
-                fowa2015.formidablelabs.com
+                fowa2015.surge.sh
               </Link>
             </Text>
           </div>
@@ -221,22 +221,6 @@ export default class extends React.Component {
             <ListItem><Appear fid="2">We love <em>React</em></Appear></ListItem>
             <ListItem><Appear fid="3">We love great DevUX</Appear></ListItem>
           </List>
-        </Slide>
-        <Slide bgImage={"http://1.bp.blogspot.com/-AE5n71l7fYo/U_kgHH5-TkI/AAAAAAAA-hg/3a6FEXsJsRA/s1600/Breitling%2BNavitimer%2B01%2BLimited%2B3.jpg"} bgDarken={0.55}>
-          <Heading bold fit caps textColor="white">
-            Data visualization
-          </Heading>
-          <Heading bold fit caps textColor="white">
-            Is both technical
-          </Heading>
-          <Heading bold fit caps textColor="white">
-            And aesthetic
-          </Heading>
-        </Slide>
-        <Slide bgImage={"http://the-diamond-studio.com/wp-content/uploads/2014/01/IMG_2981.jpg"} bgDarken={0.55}>
-          <Heading bold fit textColor={"lightestGray"} >
-            The medium matters
-          </Heading>
         </Slide>
         <Slide>
           <Heading size={2} textColor={"red"}>
@@ -263,6 +247,22 @@ export default class extends React.Component {
           </Heading>
           <Heading size={4} bold >
             Better tooling and infrastructure
+          </Heading>
+        </Slide>
+        <Slide bgImage={"http://1.bp.blogspot.com/-AE5n71l7fYo/U_kgHH5-TkI/AAAAAAAA-hg/3a6FEXsJsRA/s1600/Breitling%2BNavitimer%2B01%2BLimited%2B3.jpg"} bgDarken={0.55}>
+          <Heading bold fit caps textColor="white">
+            Data visualization
+          </Heading>
+          <Heading bold fit caps textColor="white">
+            Is both technical
+          </Heading>
+          <Heading bold fit caps textColor="white">
+            And aesthetic
+          </Heading>
+        </Slide>
+        <Slide bgImage={"http://the-diamond-studio.com/wp-content/uploads/2014/01/IMG_2981.jpg"} bgDarken={0.55}>
+          <Heading bold fit textColor={"lightestGray"} >
+            The medium matters
           </Heading>
         </Slide>
 
@@ -422,6 +422,99 @@ export default class extends React.Component {
             ]}/>
         </Slide>
         <Slide>
+          <Heading size={3}>
+            angles
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              <VictoryPie
+                endAngle={90}
+                startAngle={-90}
+                innerRadius={140}
+                style={{
+                  labels: {
+                    padding: -70
+                  },
+                  data: {
+                    stroke: "transparent",
+                    opacity: 0.3
+                  }
+                }}
+                data={[
+                  { x: "Cats", y: 400 },
+                  { x: "Dogs", y: 350 },
+                  { x: "Frogs", y: 25 },
+                  { x: "Turtles", y: 55 },
+                  { x: "Chimps", y: 5 }
+                ]}/>
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            angles
+          </Heading>
+          <VictoryPie
+            innerRadius={140}
+            endAngle={90}
+            startAngle={-90}
+            style={{
+              labels: {
+                padding: -70
+              },
+              data: {
+                stroke: "transparent",
+                opacity: 0.5
+              },
+            }}
+            data={[
+              { x: "Cats", y: 400 },
+              { x: "Dogs", y: 350 },
+              { x: "Frogs", y: 25 },
+              { x: "Turtles", y: 55 },
+              { x: "Chimps", y: 5 }
+            ]}/>
+        </Slide>
+        <Slide>
+          <Heading fit style={{marginBottom: 40}}>
+            A gradient of control
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              styles={{
+                padding: this.props.x > 100 ? 10 : 20
+              }}
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}/>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              <VictoryPie>
+                <VictoryLabel fooProp={} />
+              </VictoryPie>
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}/>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              this.props.children ?
+                this.props.children :  <Label ... />
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}/>
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            Even if you have to fork, the instantiation remains valid.
+          </Heading>
+        </Slide>
+        <Slide>
           <Heading bold fit textColor={"red"}>
             Ecology.js
           </Heading>
@@ -431,10 +524,11 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <List>
-            <ListItem><Appear fid="1">projects.formidablelabs.com/victory-pie/</Appear></ListItem>
-            <ListItem><Appear fid="1">projects.formidablelabs.com/victory-scatter/</Appear></ListItem>
-            <ListItem><Appear fid="1">projects.formidablelabs.com/victory-chart/</Appear></ListItem>
-            <ListItem><Appear fid="1">projects.formidablelabs.com/victory-line/</Appear></ListItem>
+            <ListItem>projects.formidablelabs.com/victory-pie/</ListItem>
+            <ListItem>projects.formidablelabs.com/victory-scatter/</ListItem>
+            <ListItem>projects.formidablelabs.com/victory-chart/</ListItem>
+            <ListItem>projects.formidablelabs.com/victory-axis/</ListItem>
+            <ListItem>projects.formidablelabs.com/victory-line/</ListItem>
           </List>
         </Slide>
 
@@ -563,8 +657,8 @@ export default class extends React.Component {
           />
         </Slide>
         <Slide>
-          <Heading size={3}>
-            Viz State in D3
+          <Heading fit>
+            Viz State in D3 (mutation)
           </Heading>
           <CodePane
             lang="javascript"
@@ -580,6 +674,19 @@ export default class extends React.Component {
                 }
                 update(d);
               }
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            Viz State in Victory
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              this.setState({foo: 20})
             `)}
             margin="20px auto"
             style={{fontSize: "2em"}}
@@ -637,6 +744,19 @@ export default class extends React.Component {
           <LonelyHeading size={2} textColor="lightestGray">
             Victory is going to make data visualizations <em>first class citizens</em> in the OSS community.
           </LonelyHeading>
+        </Slide>
+        <Slide >
+          <Heading size={4}>
+            Formidable built this. Come build with us:
+          </Heading>
+          <Heading size={2} textColor={"red"}>
+            formidable.com
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={2}>
+            @colinmegill
+          </Heading>
         </Slide>
       </CustomDeck>
     );
