@@ -562,22 +562,6 @@ export default class extends React.Component {
           />
         </Slide>
         <Slide>
-          <Heading bold size={2} >
-            Components are <em>composable</em>
-          </Heading>
-          <Heading fit style={{marginTop: 40}}>
-            {"github.com/FormidableLabs/victory-examples"}
-          </Heading>
-        </Slide>
-        <Slide>
-          <Heading bold fit textColor={"red"}>
-            Radium
-          </Heading>
-          <Heading bold fit >
-            Styles become data
-          </Heading>
-        </Slide>
-        <Slide>
           <Heading size={3}>
             Viz State in D3
           </Heading>
@@ -599,6 +583,22 @@ export default class extends React.Component {
             margin="20px auto"
             style={{fontSize: "2em"}}
           />
+        </Slide>
+        <Slide>
+          <Heading bold size={2} >
+            Components are <em>composable</em>
+          </Heading>
+          <Heading fit style={{marginTop: 40}}>
+            {"github.com/FormidableLabs/victory-examples"}
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading bold fit textColor={"red"}>
+            Radium
+          </Heading>
+          <Heading bold fit >
+            Styles become data
+          </Heading>
         </Slide>
 
 
