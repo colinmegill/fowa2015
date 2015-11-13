@@ -207,17 +207,6 @@ export default class extends React.Component {
           </div>
         </Slide>
 
-        {/* ---------------------------------------------------------------
-          * Large Scale Web Applications
-          * ---------------------------------------------------------------
-
-            - The Frontend is winning
-                - Users want the fast experience
-                - Product owners want agile, powerful apps
-                - Frontend web apps are business critical and we'd better catch up.
-
-            - Enterprise's time has come. And we're going to talk it through.
-          */}
         <Slide id="intro">
           <LonelyHeading size={4}>
             A <em>collection of composable react components</em> for building interactive data visualizations
@@ -232,6 +221,22 @@ export default class extends React.Component {
             <ListItem><Appear fid="2">We love <em>React</em></Appear></ListItem>
             <ListItem><Appear fid="3">We love great DevUX</Appear></ListItem>
           </List>
+        </Slide>
+        <Slide bgImage={"http://1.bp.blogspot.com/-AE5n71l7fYo/U_kgHH5-TkI/AAAAAAAA-hg/3a6FEXsJsRA/s1600/Breitling%2BNavitimer%2B01%2BLimited%2B3.jpg"} bgDarken={0.55}>
+          <Heading bold fit caps textColor="white">
+            Data visualization
+          </Heading>
+          <Heading bold fit caps textColor="white">
+            Is both technical
+          </Heading>
+          <Heading bold fit caps textColor="white">
+            And aesthetic
+          </Heading>
+        </Slide>
+        <Slide bgImage={"http://the-diamond-studio.com/wp-content/uploads/2014/01/IMG_2981.jpg"} bgDarken={0.55}>
+          <Heading bold fit textColor={"lightestGray"} >
+            The medium matters
+          </Heading>
         </Slide>
         <Slide>
           <Heading size={2} textColor={"red"}>
@@ -248,7 +253,7 @@ export default class extends React.Component {
           <Heading size={4} bold >
             component lifecycle +
           </Heading>
-          <Heading size={4}>
+          <Heading style={{marginTop: -25}} size={4}>
             data binding
           </Heading>
         </Slide>
@@ -257,8 +262,189 @@ export default class extends React.Component {
             DevUX
           </Heading>
           <Heading size={4} bold >
-            Give the community a better medium for rapid prototyping
+            Better tooling and infrastructure
           </Heading>
+        </Slide>
+
+        {/* ---------------------------------------------------------------
+          * Part 1: Bridging the gap between beginners and experts
+          * what it means for you - drop in and fully customize
+          * ---------------------------------------------------------------
+          */}
+        <Slide bgImage={images.polygons}>
+          <LonelyHeading size={2} textColor="lightestGray">
+            Bridging the gap between beginners and experts
+          </LonelyHeading>
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            <i className="fa fa-flash"></i> Seconds to Drop In
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              $ npm install victory-pie
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}/>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              import {VictoryPie} from "victory-pie";
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}/>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              <VictoryPie/>
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}/>
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            defaultProps
+          </Heading>
+          <VictoryPie/>
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            Data
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              <VictoryPie data={[
+                { x: "Cats", y: 400 },
+                { x: "Dogs", y: 350 },
+                { x: "Frogs", y: 25 },
+                { x: "Turtles", y: 55 },
+                { x: "Chimps", y: 5 }
+                ]}/>
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            Data
+          </Heading>
+          <VictoryPie data={[
+              { x: "Cats", y: 400 },
+              { x: "Dogs", y: 350 },
+              { x: "Frogs", y: 25 },
+              { x: "Turtles", y: 55 },
+              { x: "Chimps", y: 5 }
+            ]}/>
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            innerRadius
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              <VictoryPie
+                innerRadius={140}
+                data={[
+                  { x: "Cats", y: 400 },
+                  { x: "Dogs", y: 350 },
+                  { x: "Frogs", y: 25 },
+                  { x: "Turtles", y: 55 },
+                  { x: "Chimps", y: 5 }
+                ]}/>
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            innerRadius
+          </Heading>
+          <VictoryPie
+            innerRadius={140}
+            data={[
+              { x: "Cats", y: 400 },
+              { x: "Dogs", y: 350 },
+              { x: "Frogs", y: 25 },
+              { x: "Turtles", y: 55 },
+              { x: "Chimps", y: 5 }
+            ]}/>
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            stroke & opacity
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              <VictoryPie
+                innerRadius={140}
+                style={{
+                  data: {
+                    stroke: "transparent",
+                    opacity: 0.3
+                  }
+                }}
+                data={[
+                  { x: "Cats", y: 400 },
+                  { x: "Dogs", y: 350 },
+                  { x: "Frogs", y: 25 },
+                  { x: "Turtles", y: 55 },
+                  { x: "Chimps", y: 5 }
+                ]}/>
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2em"}}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            stroke & opacity
+          </Heading>
+          <VictoryPie
+            innerRadius={140}
+            style={{
+              data: {
+                stroke: "transparent",
+                opacity: 0.5
+              }
+            }}
+            data={[
+              { x: "Cats", y: 400 },
+              { x: "Dogs", y: 350 },
+              { x: "Frogs", y: 25 },
+              { x: "Turtles", y: 55 },
+              { x: "Chimps", y: 5 }
+            ]}/>
+        </Slide>
+        <Slide>
+          <Heading bold fit textColor={"red"}>
+            Ecology.js
+          </Heading>
+          <Heading bold fit style={{marginTop: 40}}>
+            Interactive documentation
+          </Heading>
+        </Slide>
+        <Slide>
+          <List>
+            <ListItem><Appear fid="1">projects.formidablelabs.com/victory-pie/</Appear></ListItem>
+            <ListItem><Appear fid="1">projects.formidablelabs.com/victory-scatter/</Appear></ListItem>
+            <ListItem><Appear fid="1">projects.formidablelabs.com/victory-chart/</Appear></ListItem>
+          </List>
+        </Slide>
+
+        {/* ---------------------------------------------------------------
+          * Part 2: How is it that react makes this work?
+          * ---------------------------------------------------------------
+          */}
+        <Slide bgImage={images.polygons}>
+          <LonelyHeading size={2} textColor="lightestGray">
+            {"Why React makes this possible"}
+          </LonelyHeading>
         </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <List>
@@ -304,164 +490,6 @@ export default class extends React.Component {
             style={{fontSize: "2em"}}
           />
         </Slide>
-        <Slide bgImage={"http://1.bp.blogspot.com/-AE5n71l7fYo/U_kgHH5-TkI/AAAAAAAA-hg/3a6FEXsJsRA/s1600/Breitling%2BNavitimer%2B01%2BLimited%2B3.jpg"} bgDarken={0.55}>
-          <Heading bold fit caps textColor="white">
-            Data visualization
-          </Heading>
-          <Heading bold fit caps textColor="white">
-            Is both technical
-          </Heading>
-          <Heading bold fit caps textColor="white">
-            And aesthetic
-          </Heading>
-        </Slide>
-        <Slide bgImage={"http://the-diamond-studio.com/wp-content/uploads/2014/01/IMG_2981.jpg"} bgDarken={0.55}>
-          <Heading bold fit textColor={"lightestGray"} >
-            The medium matters
-          </Heading>
-        </Slide>
-        {/* ---------------------------------------------------------------
-          * Part 1: Bridging the gap between beginners and experts
-          * what it means for you - drop in and fully customize
-          * ---------------------------------------------------------------
-          */}
-        <Slide bgImage={images.polygons}>
-          <LonelyHeading size={2} textColor="lightestGray">
-            Bridging the gap between beginners and experts
-          </LonelyHeading>
-        </Slide>
-        <Slide>
-          <Heading size={3}>
-            <i className="fa fa-flash"></i> Seconds to Drop In
-          </Heading>
-          <CodePane
-            lang="javascript"
-            source={strip(`
-              <VictoryPie/>
-            `)}
-            margin="20px auto"
-            style={{fontSize: "2em"}}
-          />
-        </Slide>
-        <Slide>
-          <VictoryPie/>
-        </Slide>
-        <Slide>
-          <Heading size={3}>
-            Now with data
-          </Heading>
-          <CodePane
-            lang="javascript"
-            source={strip(`
-              <VictoryPie data={[
-                { x: "Cats", y: 400 },
-                { x: "Dogs", y: 350 },
-                { x: "Frogs", y: 25 },
-                { x: "Turtles", y: 55 },
-                { x: "Chimps", y: 5 }
-                ]}/>
-            `)}
-            margin="20px auto"
-            style={{fontSize: "2em"}}
-          />
-        </Slide>
-        <Slide>
-          <VictoryPie data={[
-              { x: "Cats", y: 400 },
-              { x: "Dogs", y: 350 },
-              { x: "Frogs", y: 25 },
-              { x: "Turtles", y: 55 },
-              { x: "Chimps", y: 5 }
-            ]}/>
-        </Slide>
-        <Slide>
-          <Heading size={3}>
-            Now with innerRadius
-          </Heading>
-          <CodePane
-            lang="javascript"
-            source={strip(`
-              <VictoryPie
-                innerRadius={140}
-                data={[
-                  { x: "Cats", y: 400 },
-                  { x: "Dogs", y: 350 },
-                  { x: "Frogs", y: 25 },
-                  { x: "Turtles", y: 55 },
-                  { x: "Chimps", y: 5 }
-                ]}/>
-            `)}
-            margin="20px auto"
-            style={{fontSize: "2em"}}
-          />
-        </Slide>
-        <Slide>
-          <Heading size={3}>
-            Now with innerRadius
-          </Heading>
-          <VictoryPie
-            innerRadius={140}
-            data={[
-              { x: "Cats", y: 400 },
-              { x: "Dogs", y: 350 },
-              { x: "Frogs", y: 25 },
-              { x: "Turtles", y: 55 },
-              { x: "Chimps", y: 5 }
-            ]}/>
-        </Slide>
-        <Slide>
-          <Heading size={3}>
-            Stroke & Opacity
-          </Heading>
-          <CodePane
-            lang="javascript"
-            source={strip(`
-              <VictoryPie
-                innerRadius={140}
-                style={{
-                  data: {
-                    stroke: "transparent",
-                    opacity: 0.3
-                  }
-                }}
-                data={[
-                  { x: "Cats", y: 400 },
-                  { x: "Dogs", y: 350 },
-                  { x: "Frogs", y: 25 },
-                  { x: "Turtles", y: 55 },
-                  { x: "Chimps", y: 5 }
-                ]}/>
-            `)}
-            margin="20px auto"
-            style={{fontSize: "2em"}}
-          />
-        </Slide>
-        <Slide>
-          <Heading size={3}>
-            Stroke & Opacity
-          </Heading>
-          <VictoryPie
-            innerRadius={140}
-            style={{
-              data: {
-                stroke: "transparent",
-                opacity: 0.3
-              }
-            }}
-            data={[
-              { x: "Cats", y: 400 },
-              { x: "Dogs", y: 350 },
-              { x: "Frogs", y: 25 },
-              { x: "Turtles", y: 55 },
-              { x: "Chimps", y: 5 }
-            ]}/>
-        </Slide>
-
-
-        {/* ---------------------------------------------------------------
-          * Part 2: How is it that react makes this work?
-          * ---------------------------------------------------------------
-          */}
         <Slide>
           <Heading size={3}>
             Markup in D3
@@ -534,19 +562,11 @@ export default class extends React.Component {
           />
         </Slide>
         <Slide>
-          <Heading>
-            {"github.com/"}
-          </Heading>
-          <Heading>
-            {"FormidableLabs/"}
-          </Heading>
-          <Heading>
-            {"victory-examples"}
-          </Heading>
-        </Slide>
-        <Slide>
           <Heading bold size={2} >
-            Components are composable
+            Components are <em>composable</em>
+          </Heading>
+          <Heading fit style={{marginTop: 40}}>
+            {"github.com/FormidableLabs/victory-examples"}
           </Heading>
         </Slide>
         <Slide>
@@ -583,14 +603,39 @@ export default class extends React.Component {
 
 
 
-
+        {/* ---------------------------------------------------------------
+          * Part 3: Developer environment and tooling
+          * ---------------------------------------------------------------
+          */}
+        <Slide bgImage={images.polygons}>
+          <LonelyHeading size={2} textColor="lightestGray">
+            {"Infrastructure"}
+          </LonelyHeading>
+        </Slide>
         <Slide>
-          <Heading bold fit textColor={"red"}>
-            Ecology.js
-          </Heading>
-          <Heading bold fit style={{marginTop: 40}}>
-            Interactive documentation
-          </Heading>
+          <List>
+            <ListItem><Appear fid="1">Repos rather than gists</Appear></ListItem>
+            <ListItem><Appear fid="1">forking / issues for continual improvement</Appear></ListItem>
+            <ListItem><Appear fid="1">package.json for dependencies</Appear></ListItem>
+            <ListItem><Appear fid="1">minified dists / umd builds for CDN</Appear></ListItem>
+            <ListItem><Appear fid="1">Babel for ES6</Appear></ListItem>
+            <ListItem><Appear fid="1">Webpack for builds</Appear></ListItem>
+            <ListItem><Appear fid="1">propTypes for input validation</Appear></ListItem>
+            <ListItem><Appear fid="1">Hot Reloading</Appear></ListItem>
+            <ListItem><Appear fid="1">sourcemaps</Appear></ListItem>
+            <ListItem><Appear fid="1">eslintrc</Appear></ListItem>
+            <ListItem><Appear fid="1">Tests</Appear></ListItem>
+          </List>
+        </Slide>
+        <Slide bgImage={images.polygons}>
+          <LonelyHeading size={2} textColor="lightestGray">
+            {"In other words..."}
+          </LonelyHeading>
+        </Slide>
+        <Slide bgImage={images.polygons}>
+          <LonelyHeading size={2} textColor="lightestGray">
+            Victory is going to make data visualizations <em>first class citizens</em> in the OSS community.
+          </LonelyHeading>
         </Slide>
       </CustomDeck>
     );
