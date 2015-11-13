@@ -189,7 +189,7 @@ export default class extends React.Component {
           </Text>
           <div style={{display: "inline-block", marginTop: "2.5em"}}>
             <Text style={{display: "inline-block", fontSize: "2.5em"}}>
-              <Link href="https://twitter.com/ryan_roemer"
+              <Link href="https://twitter.com/colinmegill"
                     textColor="lighterGray">
                 @colinmegill
               </Link>
